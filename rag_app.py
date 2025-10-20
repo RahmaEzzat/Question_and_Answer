@@ -10,7 +10,7 @@ import pickle
 import shutil
 
 from langchain_community.document_loaders import PyPDFLoader
-from langchain.text_splitter import NLTKTextSplitter
+from langchain_text_splitters import NLTKTextSplitter
 from langchain_chroma import Chroma
 from langchain import PromptTemplate
 from langchain.chains.question_answering import load_qa_chain
@@ -153,3 +153,4 @@ if uploaded_file is not None:
 
             st.success("✅ Answer generated:")
             st.write(answer["output_text"])
+
