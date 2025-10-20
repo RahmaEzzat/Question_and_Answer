@@ -61,27 +61,27 @@ venv\Scripts\activate         # On Windows
    streamlit run app.py
 
    
-##🔑 Environment Variable
+## 🔑 Environment Variable
 
-You'll need a Google API key to use Gemini:
-
-Go to Google AI Studio
-
-Generate an API key
-
-Enter it in the Streamlit input box labeled
+   You'll need a Google API key to use Gemini:
+   
+   Go to Google AI Studio
+   
+   Generate an API key
+   
+   Enter it in the Streamlit input box labeled
     
     🔑 Enter your Google API Key
 
-##💡 Future Improvements
+## 💡 Future Improvements
 
-Add support for multiple document formats (DOCX, TXT)
+   Add support for multiple document formats (DOCX, TXT)
+   
+   Enable memory-based multi-turn chat
+   
+   Add user authentication for personal document storage
 
-Enable memory-based multi-turn chat
+## 🤝 Contributing
 
-Add user authentication for personal document storage
-
-##🤝 Contributing
-
-Pull requests are welcome!
-For major changes, please open an issue first to discuss what you would like to change.
+   Pull requests are welcome!
+   For major changes, please open an issue first to discuss what you would like to change.
