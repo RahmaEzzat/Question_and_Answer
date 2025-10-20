@@ -52,13 +52,16 @@ source venv/bin/activate      # On macOS/Linux
 venv\Scripts\activate         # On Windows
 
 3. Install dependencies
- pip install -r requirements.txt
-  
-5. Run the Streamlit app
+   ```bash 
+   pip install -r requirements.txt
+
+
+4. Run the Streamlit app
+   ```bash
    streamlit run app.py
 
    
-🔑 Environment Variable
+##🔑 Environment Variable
 
 You'll need a Google API key to use Gemini:
 
@@ -67,9 +70,10 @@ Go to Google AI Studio
 Generate an API key
 
 Enter it in the Streamlit input box labeled
-🔑 Enter your Google API Key
+    
+    🔑 Enter your Google API Key
 
-💡 Future Improvements
+##💡 Future Improvements
 
 Add support for multiple document formats (DOCX, TXT)
 
@@ -77,7 +81,7 @@ Enable memory-based multi-turn chat
 
 Add user authentication for personal document storage
 
-🤝 Contributing
+##🤝 Contributing
 
 Pull requests are welcome!
 For major changes, please open an issue first to discuss what you would like to change.
