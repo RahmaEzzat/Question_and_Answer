@@ -13,7 +13,8 @@ from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import NLTKTextSplitter
 from langchain_chroma import Chroma
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import load_qa_chain
+from langchain.chains.combine_documents import create_stuff_documents_chain
+from langchain.prompts import ChatPromptTemplate
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_google_genai import ChatGoogleGenerativeAI
 
@@ -139,19 +140,16 @@ if uploaded_file is not None:
                 input_variables=["context", "question"],
             )
 
-            stuff_chain = load_qa_chain(
-                llm=chat_model,
-                chain_type="stuff",
-                prompt=qna_prompt
-            )
+            prompt = ChatPromptTemplate.from_template(qna_template)
+            chain = create_stuff_documents_chain(chat_model, prompt)
+
+
 
             with st.spinner("🤔 Generating answer..."):
-                answer = stuff_chain(
-                    {"input_documents": similar_docs, "question": question},
-                    return_only_outputs=True,
-                )
+                answer = chain.invoke({"context": similar_docs, "question": question})
 
             st.success("✅ Answer generated:")
             st.write(answer["output_text"])
+
 
 
